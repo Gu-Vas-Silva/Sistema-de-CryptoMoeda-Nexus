@@ -1,0 +1,14 @@
+{
+  "users": [
+    { "id": 1, "name": "João Silva", "email": "joao@nexus.io", "password": "123" ,"status": "ACTIVE", "createdAt": "2025-10-01", "lastActivity": "2026-03-13 10:22" },
+    { "id": 2, "name": "Ana Oliveira", "email": "ana@nexus.io", "password": "1234",  "status": "ACTIVE", "createdAt": "2025-10-05", "lastActivity": "2026-03-12 19:10" },
+    { "id": 3, "name": "Carlos Pereira", "email": "carlos@nexus.io", "password": "12345", "status": "BLOCKED", "createdAt": "2025-09-15", "lastActivity": "2026-01-20 08:30" },
+    { "id": 4, "name": "Mariana Costa", "email": "mariana@nexus.io", "password": "123456", "status": "ACTIVE", "createdAt": "2025-11-03", "lastActivity": "2026-03-13 09:05" },
+    { "id": 5, "name": "Rafael Rodrigues", "email": "rafael@nexus.io", "password": "abc", "status": "ACTIVE", "createdAt": "2025-08-21", "lastActivity": "2026-03-11 21:33" },
+    { "id": 6, "name": "Juliana Martins", "email": "juliana@nexus.io", "password": "abcd", "status": "PENDING", "createdAt": "2025-12-12", "lastActivity": "2026-02-15 16:40" },
+    { "id": 7, "name": "Lucas Almeida", "email": "lucas@nexus.io", "password": "abcde", "status": "ACTIVE", "createdAt": "2025-07-07", "lastActivity": "2026-03-13 11:55" },
+    { "id": 8, "name": "Fernanda Souza", "email": "fernanda@nexus.io", "password": "abcdef", "status": "ACTIVE", "createdAt": "2025-10-29", "lastActivity": "2026-03-10 08:12" },
+    { "id": 9, "name": "Bruno Carvalho", "email": "bruno@nexus.io", "password": "arroz", "status": "BLOCKED", "createdAt": "2025-06-18", "lastActivity": "2026-01-12 13:27" },
+    { "id": 10, "name": "Patrícia Gomes", "email": "patricia@nexus.io", "password": "feijao", "status": "ACTIVE", "createdAt": "2025-09-27", "lastActivity": "2026-03-12 19:50" }
+  ]
+}

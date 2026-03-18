@@ -1,0 +1,8 @@
+{
+  "assets": [
+    { "symbol": "BRL", "name": "Real Brasileiro" },
+    { "symbol": "BTC", "name": "Bitcoin" },
+    { "symbol": "ETH", "name": "Ethereum" },
+    { "symbol": "USDT", "name": "Tether" }
+  ]
+}
