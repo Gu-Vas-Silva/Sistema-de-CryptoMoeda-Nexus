@@ -6,7 +6,7 @@ export function Sidebar() {
   const { pathname } = useLocation();
   function handleLogout(){
     localStorage.clear()
-    window.location.href = "/login"
+    window.location.href = "/"
   }
   return (
     <aside className="w-64 bg-[#020617] border-r border-white/10 p-6 flex flex-col position-fixed">

@@ -12,7 +12,7 @@ export function App(){
       <nav>
         <Routes>
           <Route path="/dashboard" element={<Dashboard/>}/>
-          <Route path="/login" element={<SignIn />} />
+          <Route path="/" element={<SignIn />} />
           <Route path="/users" element={<Users/>} />
           <Route path="/deposit" element={<Deposit/>} />
           <Route path="/withdraw" element={<WithDraw/>} />
