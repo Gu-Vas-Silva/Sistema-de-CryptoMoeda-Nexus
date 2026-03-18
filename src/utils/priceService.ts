@@ -1,4 +1,4 @@
-import { api } from "../apiCoinGecko/CoinGecko"
+import axios from "axios"
 import assetsData from "../mocks/assets.json"
 import { assetToCoingeckoId } from "./assetsMap"
 
@@ -9,12 +9,12 @@ export async function getCryptoPrices() {
     .filter(id => id && id !== "brl")
     .join(",")
 
-  const response = await api.get("/simple/price", {
-    params: {
-      ids,
-      vs_currencies: "brl"
-    }
-  })
+  const response = await axios.get("/api/simple/price", {
+  params: {
+    ids,
+    vs_currencies: "brl"
+  }
+})
 
   const data = response.data
 
@@ -25,7 +25,7 @@ export async function getCryptoPrices() {
   assetsData.assets.forEach(asset => {
     const cgId = assetToCoingeckoId[asset.symbol]
 
-    if (cgId && data[cgId]) {
+    if (cgId && data[cgId]?.brl) {
       prices[asset.symbol] = data[cgId].brl
     }
   })

@@ -14,12 +14,20 @@ export async function getTotalVolumeBRLByUser(userId: number) {
 
   userTransactions.forEach((t) => {
 
-    const price = prices[t.asset] || 1
-    const valueBRL = t.amount * price
+  const price = prices[t.asset] ?? 0
+  const amount = Number(t.amount)
 
+  if (!price || isNaN(amount)) return
+
+  const valueBRL = amount * price
+
+  if (t.type === "DEPOSIT") {
     totalVolume += valueBRL
+  } else {
+    totalVolume -= valueBRL
+  }
 
-  })
+})
   
   return totalVolume
 }

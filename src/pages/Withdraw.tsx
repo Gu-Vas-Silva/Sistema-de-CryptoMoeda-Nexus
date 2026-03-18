@@ -56,7 +56,7 @@ export function WithDraw() {
     }
     transactionsData.transactions.push(newTransaction)
 
-    if(newTransaction.amount < volume){
+    if(newTransaction.amount > volume){
         alert("Saldo insuficiente")
         return
     }
