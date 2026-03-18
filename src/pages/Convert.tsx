@@ -119,7 +119,7 @@ export function Convert() {
 
             </div>
 
-            <div className="bg-[#020617] border border-white/10 rounded-xl p-6 flex items-center justify-center w-150 p-20">
+            <div className="bg-[#020617] border border-white/10 rounded-xl flex items-center justify-center w-150 p-20">
 
               {!result ? (
                 <p className="text-gray-400 text-center">

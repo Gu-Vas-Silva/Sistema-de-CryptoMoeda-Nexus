@@ -1,73 +1,69 @@
-# React + TypeScript + Vite
+🚀 Sistema de CryptoMoeda - Nexus
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto desenvolvido em React + TypeScript + Tailwind simulando uma plataforma de gestão de ativos e transações (depósitos, saques e conversões), com dados mockados e integração com API de preços.
 
-Currently, two official plugins are available:
+▶️ Como rodar o projeto
+1. Clone o repositório
+git clone https://github.com/Gu-Vas-Silva/Sistema-de-CryptoMoeda-Nexus
+cd Sistema-de-CryptoMoeda-Nexus
+2. Instale as dependências
+npm install
+3. Rode o projeto
+npm run dev
+4. Acesse no navegador
+http://localhost:5173
+🧠 Estrutura do projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A estrutura foi pensada para separar responsabilidades e facilitar manutenção:
 
-## React Compiler
+src/
+ ├── components/      # Componentes reutilizáveis (Sidebar, Topbar, Cards, etc)
+ ├── pages/           # Telas principais (Dashboard, Users, Convert, etc)
+ ├── utils/           # Regras de negócio (cálculos, services, lógica)
+ ├── mocks/           # Dados simulados (users, transactions, assets)
+ ├── types/           # Tipagens TypeScript (Transaction, User, etc)
+ ├── App.tsx          # Definição de rotas
+ └── main.tsx         # Entrada da aplicação
+⚙️ Padrões utilizados
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🔹 Componentização → UI separada em partes reutilizáveis
 
-## Expanding the ESLint configuration
+🔹 Utils/Services → lógica de negócio isolada
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🔹 LocalStorage → simulação de persistência de dados
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+🔹 TypeScript → tipagem forte para evitar erros
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+🔹 React Router → navegação entre páginas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+💰 Funcionalidades
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Login de usuário (mockado)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Depósitos e saques
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Conversão de ativos (via API CoinGecko)
+
+Dashboard com métricas
+
+Saldo por ativo
+
+Histórico de transações
+
+📌 Observações
+
+Os dados são mockados (não há backend real)
+
+As transações são armazenadas no localStorage
+
+Os preços dos ativos são obtidos em tempo real via API
+
+🚀 Melhorias futuras
+
+Integração com backend real
+
+Autenticação com JWT
+
+Gráficos de análise
+
+Atualização em tempo real

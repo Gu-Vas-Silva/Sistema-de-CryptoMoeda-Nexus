@@ -4,6 +4,7 @@ import { Topbar } from '../components/Topbar'
 import usersData from '../mocks/user.json'
 import assetsData from '../mocks/assets.json'
 import transactionsData from '../mocks/transactions.json'
+import { getTotalVolumeBRLByUser } from '../utils/volumeService'
 type User = {
   id: number
   name: string
@@ -17,6 +18,7 @@ export function WithDraw() {
   const [amount, setAmount] = useState('')
   const [note, setNote] = useState('')
   const [user, setUser] = useState<User>()
+  const [volume, setVolume] = useState<any>()
 
   useEffect(() => {
     const activeUsers = usersData.users.filter(u => u.status === 'ACTIVE')
@@ -26,6 +28,7 @@ export function WithDraw() {
 
       setUser(parsedUser)
       setUsers(activeUsers as [])
+      getTotalVolumeBRLByUser(parsedUser.id).then(setVolume)
     }
   }, [])
 
@@ -53,6 +56,10 @@ export function WithDraw() {
     }
     transactionsData.transactions.push(newTransaction)
 
+    if(newTransaction.amount < volume){
+        alert("Saldo insuficiente")
+        return
+    }
     console.log('Nova transação:', newTransaction)
     const dados = JSON.parse(localStorage.getItem('transactions') || '[]')
     dados.push(newTransaction)

@@ -1,4 +1,4 @@
-import transactionsData from "../mocks/transactions.json"
+
 import type { Transaction } from "../types/Transactions"
 import { getTransactions } from "./getTransactions"
 export function getLastTransactions(userId: number, limit = 5) {
