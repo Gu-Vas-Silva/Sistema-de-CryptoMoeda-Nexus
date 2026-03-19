@@ -30,10 +30,8 @@ export async function getUserDepositComparison(
     const month = date.getMonth()
     const year = date.getFullYear()
 
-    // 🔥 pega preço do ativo
     const price = prices[t.asset] || 1
-
-    // 🔥 converte pra BRL
+    
     const valueBRL = t.amount * price
 
     if (month === currentMonth && year === currentYear) {
